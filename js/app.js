@@ -28,13 +28,13 @@ class Tomagotchi {
     }
 }
 // Tomagotchi is the player to pass in
-class Game {
-    constructor(tomagotchi) {
-        this.tomagotchi = tomagotchi;
-    }
+const game = {
     start() {
         Tomagotchi();
-    }
+        setInterval(function () {
+            this.increaseAge(tomagotchi)
+        }, 1000) 
+    },
     // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     isGameOver(tomagotchi) {
         if (tomagotchi.hunger > 9) {
@@ -44,11 +44,11 @@ class Game {
         } else if (tomagotchi.boredom > 9) {
             console.log(`${tomagotchi.name} is deceased due to boredom!`);
         }
-    }
+    },
     // Increase your pet's age every x minutes
     increaseAge(tomagotchi) {
-        setInterval(function() {
-            tomagotchi.age++;
-        }, 1000) 
+        
+        // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+
     }
 }
