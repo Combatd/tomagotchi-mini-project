@@ -3,7 +3,7 @@
     <head>
         <title>W3D2 tomagotchi-mini-project</title>
         <link rel="stylesheet" href="css/style.css">
-        
+        <script src="js/jquery-3.4.1.js"></script>
     </head>
     <body>
         <header>
@@ -11,12 +11,20 @@
             <h2 id="tomagotchi-name">Name: </h2>
         </header>
 
+        <div class="container">
+            <div class="tomagotchi"></div>
+        </div>
+
         <!-- Add buttons to the screen to feed your pet, turn off the lights, and play with your pet. -->
         <div class="btn-div">
-            <button class="action-btn"></button>
-            <button class="action-btn"></button>
-            <button class="action-btn"></button>
-            <button class="action-btn"></button>
+            <button class="action-btn">Feed</button>
+            <button class="action-btn">Toggle Lights</button>
+            <button class="action-btn">Play</button>
+            <button class="action-btn">New Pet</button>
+        </div>
+        <br>
+        <div class="name-entry-div">
+            <label for="#name-entry">Enter a Name</label> <input type="text" id="name-entry">
         </div>
 
         <script src="js/app.js"></script>
