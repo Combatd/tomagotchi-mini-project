@@ -35,6 +35,7 @@ class Game {
     start() {
         Tomagotchi();
     }
+    // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     isGameOver(tomagotchi) {
         if (tomagotchi.hunger > 9) {
             console.log(`${tomagotchi.name} is deceased due to hunger!`);
@@ -43,5 +44,11 @@ class Game {
         } else if (tomagotchi.boredom > 9) {
             console.log(`${tomagotchi.name} is deceased due to boredom!`);
         }
+    }
+    // Increase your pet's age every x minutes
+    increaseAge(tomagotchi) {
+        setInterval(function() {
+            tomagotchi.age++;
+        }, 1000) 
     }
 }
