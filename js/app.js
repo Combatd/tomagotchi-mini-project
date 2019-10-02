@@ -13,7 +13,7 @@ class Tomagotchi {
        this.name = name;
     }
     // toggle the lighting of the page (sleeping)
-    toggleLights() {
+    sleep() {
         const $tomagotchi = $('#tomagotchi');
         
         if ($tomagotchi.attr('backgroundColor', 'black')) {
@@ -72,6 +72,10 @@ const game = {
 $('#feed').on('click', () => {
     // reduce hunger of pet
     tomagotchi.feed();
+});
+
+$('#sleep').on('click', () => {
+    tomagotchi.sleep()
 });
 
 game.start("Rusty"); // should pass in correctly
