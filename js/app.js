@@ -34,8 +34,9 @@ class Tomagotchi {
 }
 // Tomagotchi is the player to pass in
 const game = {
-    start(name) {
+    start(name) {   
         this.name = name; // pass it in
+        if (this.name != "")
         tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
         $('#pet-img').attr('src', 'img/bulbasaur.png');
@@ -116,6 +117,24 @@ $('#new-pet').on('click', () => {
     // add the ability to set your pet's name
     const petName = document.querySelector('#name-entry').value
     game.start(petName);
+});
+
+$('#lights').on('click', () => {
+    const header = document.querySelector('header');
+    const images = document.querySelector('#img-div');
+    
+    if (images.style.backgroundColor === "white") {
+        images.style.backgroundColor = "grey";
+    } else {
+        images.style.backgroundColor = "white";
+    }
+    
+    if (header.style.backgroundColor === "white") {
+        header.style.backgroundColor = "grey";
+    } else {
+        header.style.backgroundColor = "white";
+    }
+
 });
 
 // game.start("Rusty"); // should pass in correctly
