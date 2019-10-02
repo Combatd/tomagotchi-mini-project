@@ -8,28 +8,28 @@ class Tomagotchi {
         this.boredom = 1;
         this.age = 0;
     }
-    // add the ability to set your pet's name
-    namePet(name) {
-       this.name = name;
-    }
+     
     // toggle the lighting of the page (sleeping)
     sleep() {
         this.sleepiness -= Math.floor(Math.random() * Math.floor(5));
         if (this.sleepiness < 1) {
             this.sleepiness = 1;
         }
+        game.displayStats();
     }
     play() {
         this.boredom-=Math.floor(Math.random() * Math.floor(5));
         if (this.boredom < 1) {
             this.boredom = 1;
         }
+        game.displayStats();
     }
     feed() {
         this.hunger -= Math.floor(Math.random() * Math.floor(5));
         if (this.hunger < 1) {
             this.hunger = 1;
         }
+        game.displayStats();
     }
 }
 // Tomagotchi is the player to pass in
@@ -39,6 +39,7 @@ const game = {
         tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
         $('#pet-img').attr('src', 'img/bulbasaur.png');
+        this.displayStats(); // update DOM for stats
         const intervalId = setInterval(function () {
             game.increaseAge(tomagotchi);
             console.log(tomagotchi);
@@ -61,6 +62,10 @@ const game = {
             alert(`${tomagotchi.name} is deceased due to boredom!`);
             $('#pet-img').attr('src', '');
             return "gameover";
+        } else if (tomagotchi.age > 99) {
+            alert(`${tomagotchi.name} has died of old age!`);
+            $('#pet-img').attr('src', '');
+            return "gameover";
         }
     },
     // Increase your pet's age every x minutes
@@ -79,7 +84,18 @@ const game = {
             $('#pet-img').attr('src', 'img/venusaur.png');
         }
     },
-
+    displayStats() {
+        const $name = $('#tomagotchi-name');
+        const $age = $('#tomagotchi-age');
+        const $hunger = $('#tomagotchi-hunger');
+        const $sleepiness = $('#tomagotchi-sleepiness');
+        const $boredom = $('#tomagotchi-boredom');
+        $name.text(`Name: ${tomagotchi.name}`);
+        $age.text(`Age: ${tomagotchi.age}`);
+        $hunger.text(`Hunger: ${tomagotchi.hunger}`);
+        $sleepiness.text(`Sleepiness: ${tomagotchi.sleepiness}`);
+        $boredom.text(`Boredom: ${tomagotchi.boredom}`);
+    }
 } // end game object
 
 // event listeners
@@ -97,6 +113,7 @@ $('#play').on('click', () => {
 });
 
 $('#new-pet').on('click', () => {
+    // add the ability to set your pet's name
     const petName = document.querySelector('#name-entry').value
     game.start(petName);
 });
