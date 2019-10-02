@@ -26,6 +26,9 @@ class Tomagotchi {
     playPet() {
         this,boredom -= Math.floor(Math.random() * Math.floor(5));
     }
+    feed() {
+        this.hunger -= Math.floor(Math.random() * Math.floor(5));
+    }
 }
 // Tomagotchi is the player to pass in
 const game = {
@@ -63,5 +66,8 @@ const game = {
         tomagotchi.boredom += Math.floor(Math.random() * Math.floor(3));
     }
 }
+
+// event listeners
+$('#feed')
 
 game.start("Rusty"); // should pass in correctly
