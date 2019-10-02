@@ -29,8 +29,9 @@ class Tomagotchi {
 }
 // Tomagotchi is the player to pass in
 const game = {
-    start() {
-        const tomagotchi = new Tomagotchi("Broly");
+    start(name) {
+        this.name = name; // pass it in
+        const tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
         const intervalId = setInterval(function () {
             game.increaseAge(tomagotchi);
@@ -43,13 +44,13 @@ const game = {
     // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     isGameOver(tomagotchi) {
         if (tomagotchi.hunger > 10) {
-            console.log(`${tomagotchi.name} is deceased due to hunger!`);
+            alert(`${tomagotchi.name} is deceased due to hunger!`);
             return "gameover";
         } else if (tomagotchi.sleepiness > 10) {
-            console.log(`${tomagotchi.name} is deceased due to exhaustion!`);
+            alert(`${tomagotchi.name} is deceased due to exhaustion!`);
             return "gameover";
         } else if (tomagotchi.boredom > 10) {
-            console.log(`${tomagotchi.name} is deceased due to boredom!`);
+            alert(`${tomagotchi.name} is deceased due to boredom!`);
             return "gameover";
         }
     },
@@ -63,4 +64,4 @@ const game = {
     }
 }
 
-game.start();
+game.start("Rusty"); // should pass in correctly
