@@ -15,12 +15,21 @@ class Tomagotchi {
     // toggle the lighting of the page (sleeping)
     sleep() {
         this.sleepiness -= Math.floor(Math.random() * Math.floor(5));
+        if (this.sleepiness < 1) {
+            this.sleepiness = 1;
+        }
     }
-    playPet() {
-        this,boredom -= Math.floor(Math.random() * Math.floor(5));
+    play() {
+        this.boredom-=Math.floor(Math.random() * Math.floor(5));
+        if (this.boredom < 1) {
+            this.boredom = 1;
+        }
     }
     feed() {
         this.hunger -= Math.floor(Math.random() * Math.floor(5));
+        if (this.hunger < 1) {
+            this.hunger = 1;
+        }
     }
 }
 // Tomagotchi is the player to pass in
@@ -69,6 +78,10 @@ $('#feed').on('click', () => {
 
 $('#sleep').on('click', () => {
     tomagotchi.sleep();
+});
+
+$('#play').on('click', () => {
+    tomagotchi.play();
 });
 
 game.start("Rusty"); // should pass in correctly
