@@ -42,13 +42,13 @@ const game = {
     },
     // You pet should die if Hunger, Boredom, or Sleepiness hits 10.
     isGameOver(tomagotchi) {
-        if (tomagotchi.hunger > 9) {
+        if (tomagotchi.hunger > 10) {
             console.log(`${tomagotchi.name} is deceased due to hunger!`);
             return "gameover";
-        } else if (tomagotchi.sleepiness > 9) {
+        } else if (tomagotchi.sleepiness > 10) {
             console.log(`${tomagotchi.name} is deceased due to exhaustion!`);
             return "gameover";
-        } else if (tomagotchi.boredom > 9) {
+        } else if (tomagotchi.boredom > 10) {
             console.log(`${tomagotchi.name} is deceased due to boredom!`);
             return "gameover";
         }
