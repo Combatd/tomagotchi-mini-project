@@ -1,4 +1,4 @@
-// avoid having multiple setInterval() calls
+// avoid having multiple setInterval() call
 
 class Tomagotchi {
     constructor(name) {
@@ -34,7 +34,7 @@ class Tomagotchi {
 const game = {
     start(name) {
         this.name = name; // pass it in
-        const tomagotchi = new Tomagotchi(name);
+        tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
         const intervalId = setInterval(function () {
             game.increaseAge(tomagotchi);
@@ -64,10 +64,14 @@ const game = {
         tomagotchi.hunger+= Math.floor(Math.random() * Math.floor(3));
         tomagotchi.sleepiness+=Math.floor(Math.random() * Math.floor(3));
         tomagotchi.boredom += Math.floor(Math.random() * Math.floor(3));
-    }
-}
+    },
+
+} // end game object
 
 // event listeners
-$('#feed')
+$('#feed').on('click', () => {
+    // reduce hunger of pet
+    tomagotchi.feed();
+});
 
 game.start("Rusty"); // should pass in correctly
