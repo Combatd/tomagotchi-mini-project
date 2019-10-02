@@ -34,7 +34,7 @@ const game = {
         console.log(tomagotchi);
         const intervalId = setInterval(function () {
             game.increaseAge(tomagotchi);
-            console.log()
+            console.log(tomagotchi);
             if (game.isGameOver(tomagotchi) === "gameover") {
                 clearInterval(intervalId) // end the setInterval
             }; // check isGameOver
