@@ -84,4 +84,9 @@ $('#play').on('click', () => {
     tomagotchi.play();
 });
 
-game.start("Rusty"); // should pass in correctly
+$('#new-pet').on('click', () => {
+    const petName = document.querySelector('#name-entry').value
+    game.start(petName);
+});
+
+// game.start("Rusty"); // should pass in correctly
