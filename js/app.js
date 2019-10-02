@@ -38,6 +38,7 @@ const game = {
         this.name = name; // pass it in
         tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
+        $('#pet-img').attr('src', 'img/bulbasaur.png');
         const intervalId = setInterval(function () {
             game.increaseAge(tomagotchi);
             console.log(tomagotchi);
@@ -50,12 +51,15 @@ const game = {
     isGameOver(tomagotchi) {
         if (tomagotchi.hunger > 10) {
             alert(`${tomagotchi.name} is deceased due to hunger!`);
+            $('#pet-img').attr('src', '');
             return "gameover";
         } else if (tomagotchi.sleepiness > 10) {
             alert(`${tomagotchi.name} is deceased due to exhaustion!`);
+            $('#pet-img').attr('src', '');
             return "gameover";
         } else if (tomagotchi.boredom > 10) {
             alert(`${tomagotchi.name} is deceased due to boredom!`);
+            $('#pet-img').attr('src', '');
             return "gameover";
         }
     },
@@ -66,6 +70,14 @@ const game = {
         tomagotchi.hunger+= Math.floor(Math.random() * Math.floor(3));
         tomagotchi.sleepiness+=Math.floor(Math.random() * Math.floor(3));
         tomagotchi.boredom += Math.floor(Math.random() * Math.floor(3));
+
+        if (tomagotchi.age > 15) {
+            $('#pet-img').attr('src', 'img/ivysaur.gif');
+        } 
+        
+        if (tomagotchi.age > 30) {
+            $('#pet-img').attr('src', 'img/venusaur.png');
+        }
     },
 
 } // end game object
