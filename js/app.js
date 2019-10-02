@@ -63,7 +63,7 @@ const game = {
             alert(`${tomagotchi.name} is deceased due to boredom!`);
             $('#pet-img').attr('src', '');
             return "gameover";
-        } else if (tomagotchi.age > 99) {
+        } else if (tomagotchi.age > 60) {
             alert(`${tomagotchi.name} has died of old age!`);
             $('#pet-img').attr('src', '');
             return "gameover";
@@ -96,7 +96,7 @@ const game = {
         $hunger.text(`Hunger: ${tomagotchi.hunger}`);
         $sleepiness.text(`Sleepiness: ${tomagotchi.sleepiness}`);
         $boredom.text(`Boredom: ${tomagotchi.boredom}`);
-    }
+    },
 } // end game object
 
 // event listeners
