@@ -154,11 +154,11 @@ $('#lights').on('click', () => {
         jumbotron.style.backgroundColor = "rgb(238, 238, 238)";
     }
     
-    if (header.style.backgroundColor === "white") {
-        header.style.backgroundColor = "grey";
-    } else {
-        header.style.backgroundColor = "white";
-    }
+    // if (header.style.backgroundColor === "white") {
+    //     header.style.backgroundColor = "grey";
+    // } else {
+    //     header.style.backgroundColor = "white";
+    // }
     
     // if (images.style.backgroundColor === "white" ) {
     //     images.style.backgroundColor = "grey";
