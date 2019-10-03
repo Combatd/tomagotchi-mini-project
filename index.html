@@ -9,7 +9,10 @@
         <script src="js/bootstrap.js"></script>
     </head>
     <body>
-        <h1 class="page-header" id="header">Tomagotchi</h1>
+        <header class="page-header">
+            <h1 id="header">Tomagotchi</h1>
+        </header>
+
         <div class="container col-sm-4" id="stats-container" > 
             
             <h4 id="tomagotchi-name">Name: </h4>
@@ -34,14 +37,14 @@
         <div class="jumbotron">    
             
             <div class="container">
-                <div class="col-sm-4 col-xs-8">
+                <div class="col-sm-4 col-xs-8 col-lg">
                     <button type="button" class="btn btn-success" id="feed">Feed</button>
                     <button type="button" class="btn btn-primary" id="sleep">Sleep</button>
                     <button type="button" class="btn btn-info" id="play">Play with Pet</button>
                     <button type="button" class="btn btn-warning" id="lights">Toggle Lights</button>
                 </div>
                 <br>
-                <div class="name-entry-div col-sm-4 col-xs-4 col-lg-4">
+                <div class="name-entry-div col-sm-4 col-xs-4 col-lg-3">
                     <label for="#name-entry">Enter a Name</label> <input type="text" id="name-entry">
                     <button type="button" class="btn btn-default" id="new-pet">New Pet</button>
                 </div>

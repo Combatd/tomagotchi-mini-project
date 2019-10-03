@@ -25,7 +25,7 @@ class Tomagotchi {
         game.displayStats();
     }
     feed() {
-        this.hunger -= Math.floor(Math.random() * Math.floor(5));
+        this.hunger -= 1;
         if (this.hunger < 1) {
             this.hunger = 1;
         }
@@ -77,6 +77,8 @@ const game = {
         tomagotchi.hunger+= Math.floor(Math.random() * Math.floor(3));
         tomagotchi.sleepiness+=Math.floor(Math.random() * Math.floor(3));
         tomagotchi.boredom += Math.floor(Math.random() * Math.floor(3));
+
+        this.displayStats();
 
         if (tomagotchi.age > 15) {
             $('#pet-img').attr('src', 'img/ivysaur.gif');
@@ -142,6 +144,9 @@ $('#lights').on('click', () => {
     const stats = document.querySelector('#stats-container');
     const images = document.querySelector('#img-container');
     const jumbotron = document.querySelector('.jumbotron');
+    const header = document.querySelector('.page-header');
+    const body = document.querySelector('body');
+    
     
     if (jumbotron.style.backgroundColor === "rgb(238, 238, 238)") {
         jumbotron.style.backgroundColor = "grey";
@@ -149,17 +154,25 @@ $('#lights').on('click', () => {
         jumbotron.style.backgroundColor = "rgb(238, 238, 238)";
     }
     
-    if (images.style.backgroundColor === "white" ) {
-        images.style.backgroundColor = "grey";
+    if (header.style.backgroundColor === "white") {
+        header.style.backgroundColor = "grey";
     } else {
-        images.style.backgroundColor = "white";
+        header.style.backgroundColor = "white";
     }
+    
+    // if (images.style.backgroundColor === "white" ) {
+    //     images.style.backgroundColor = "grey";
+    // } else {
+    //     images.style.backgroundColor = "white";
+    // }
     
     if (stats.style.backgroundColor === "white") {
         stats.style.backgroundColor = "grey";
     } else {
         stats.style.backgroundColor = "white";
     }
+
+   
 
 });
 

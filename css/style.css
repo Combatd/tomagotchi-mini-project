@@ -1,16 +1,55 @@
 h1 {
-    text-align: center;
+    text-align: center;    
+}
+
+body {
+    /* background-image: url('../img/grassland.jpg'); */
+    background-image: url('../img/tomagotchiplayer.jpg');
+    background-size: 150%;
+    background-repeat: repeat-x;
+    background-position-x: -120px;
+    background-position-y: -100px;
+    
+}
+
+@media screen and (min-width: 300px ) {
+    body {   
+        background-image: url('../img/tomagotchiplayer.jpg');
+        background-size: 90%;
+        background-repeat: repeat-x;
+        background-position-x: 30px;
+        background-position-y: 10px;
+    }
+}
+
+@media screen and (min-width: 800px ) {
+    body {   
+        background-image: url('../img/tomagotchiplayer.jpg');
+        background-size: 120%;
+        background-repeat: repeat-x;
+        background-position-x: -120px;
+        background-position-y: -200px;
+    }
 }
 
 #img-container {
-   align-self: right;
+   align-self: center;
    position: absolute;
-   left: 375px;
-   bottom: 100px;
+   left: 270px;
+   bottom: 120px;
    height: 30px;
    animation: MoveUpDown 1s linear infinite;
 }
 
+#stats-container {
+    position: absolute;
+}
+
 @keyframes MoveUpDown {
   50% {bottom: 10px}
+}
+
+.jumbotron {
+    position: relative;
+    top: 275px;
 }
