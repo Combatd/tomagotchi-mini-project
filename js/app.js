@@ -139,19 +139,26 @@ $('#new-pet').on('click', () => {
 });
 
 $('#lights').on('click', () => {
-    const header = document.querySelector('#header');
-    const images = document.querySelector('#img-div');
+    const stats = document.querySelector('#stats-container');
+    const images = document.querySelector('#img-container');
+    const jumbotron = document.querySelector('.jumbotron');
     
-    if (images.style.backgroundColor === "rgb(238, 238, 238)" ) {
-        images.style.backgroundColor = "grey";
+    if (jumbotron.style.backgroundColor === "rgb(238, 238, 238)") {
+        jumbotron.style.backgroundColor = "grey";
     } else {
-        images.style.backgroundColor = "rgb(238, 238, 238)";
+        jumbotron.style.backgroundColor = "rgb(238, 238, 238)";
     }
     
-    if (header.style.backgroundColor === "white") {
-        header.style.backgroundColor = "grey";
+    if (images.style.backgroundColor === "white" ) {
+        images.style.backgroundColor = "grey";
     } else {
-        header.style.backgroundColor = "white";
+        images.style.backgroundColor = "white";
+    }
+    
+    if (stats.style.backgroundColor === "white") {
+        stats.style.backgroundColor = "grey";
+    } else {
+        stats.style.backgroundColor = "white";
     }
 
 });
