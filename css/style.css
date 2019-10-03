@@ -34,6 +34,25 @@ h1 {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    body { 
+        background-image: url('../img/tomagotchiplayer.jpg');
+        background-size: 200%;
+        background-repeat: repeat-x;
+        background-position-x: -700px;
+        background-position-y: -800px;
+    }
+
+    #img-container {
+        align-self: center;
+        position: absolute;
+        left: 270px;
+        bottom: 120px;
+        height: 30px;
+        animation: MoveUpDown 1s linear infinite;
+    }
+}
+
 #img-container {
    align-self: center;
    position: absolute;
