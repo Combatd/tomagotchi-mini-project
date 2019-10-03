@@ -39,6 +39,7 @@ const game = {
         if (this.name != "")
         tomagotchi = new Tomagotchi(name);
         console.log(tomagotchi);
+        this.moveImg();
         $('#pet-img').attr('src', 'img/bulbasaur.png');
         this.displayStats(); // update DOM for stats
         const intervalId = setInterval(function () {
@@ -84,6 +85,8 @@ const game = {
         if (tomagotchi.age > 30) {
             $('#pet-img').attr('src', 'img/venusaur.png');
         }
+        
+        this.moveImg();
     },
     displayStats() {
         const $name = $('#tomagotchi-name');
@@ -97,6 +100,22 @@ const game = {
         $sleepiness.text(`Sleepiness: ${tomagotchi.sleepiness}`);
         $boredom.text(`Boredom: ${tomagotchi.boredom}`);
     },
+    moveImg() {
+        const pet = document.querySelector('#img-div');
+        // const $width = $('body').width();
+        // const left = pet.style.left;
+        // const right = pet.style.right;
+
+
+        // if (position >= 200) {
+        //      position = 0 
+        //  } else {
+        //      position+=1;
+        //      pet.style.left = position + "px"; // float left
+        //  }
+
+    }
+
 } // end game object
 
 // event listeners
@@ -120,13 +139,13 @@ $('#new-pet').on('click', () => {
 });
 
 $('#lights').on('click', () => {
-    const header = document.querySelector('header');
+    const header = document.querySelector('#header');
     const images = document.querySelector('#img-div');
     
-    if (images.style.backgroundColor === "white") {
+    if (images.style.backgroundColor === "rgb(238, 238, 238)" ) {
         images.style.backgroundColor = "grey";
     } else {
-        images.style.backgroundColor = "white";
+        images.style.backgroundColor = "rgb(238, 238, 238)";
     }
     
     if (header.style.backgroundColor === "white") {
