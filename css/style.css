@@ -26,11 +26,10 @@ h1 {
 
 @media screen and (min-width: 1000px) {
     body { 
-        background-image: url('../img/grassland.jpg');
         background-image: url('../img/tomagotchiplayer.jpg');
         background-size: 150%;
         background-repeat: repeat-x;
-        background-position-x: -400px;
+        background-position-x: -500px;
         background-position-y: -400px;
     }
 }
